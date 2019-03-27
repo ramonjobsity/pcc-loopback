@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "../node_modules/loopback-ds-timestamp-mixin"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../node_modules/loopback-ds-timestamp-mixin"
+    ]
+  },
+  "PccUser": {
+    "dataSource": "mysqlDs"
+  },
+  "AccessToken": {
+    "dataSource": "mysqlDs",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "PccUser",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysqlDs",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "Asset": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}
