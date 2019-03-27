@@ -3,7 +3,7 @@
     "host": "localhost",
     "port": 3306,
     "database": "pcc-loopback",
-    "password": "d4fitwear",
+    "password": "root",
     "name": "mysqlDs",
     "user": "root",
     "connector": "mysql"
